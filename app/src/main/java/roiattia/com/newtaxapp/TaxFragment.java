@@ -27,10 +27,11 @@ public class TaxFragment extends Fragment {
     @BindView(R.id.tv_before_calc) TextView mBeforeCalcText;
     @BindView(R.id.tv_after_calc) TextView mAfterCalcText;
     @BindView(R.id.tv_vat) TextView mVatText;
+    @BindView(R.id.tv_vat_headline) TextView mVatHeadlineText;
     @BindView(R.id.rb_add_vat) RadioButton mAddVatRb;
     @BindView(R.id.rb_subtract_vat) RadioButton mSubtractVatRb;
 
-    private int mTax = 17;
+    private int mVat;
     private int mCurrentNumber;
 
     @Nullable
@@ -38,6 +39,8 @@ public class TaxFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.fragment_tax, container, false);
         ButterKnife.bind(this, rootview);
+
+        mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
 
         if (savedInstanceState != null){
             mBeforeCalcText.setText(savedInstanceState.getString(BEFORE_NUMBER));
@@ -58,6 +61,8 @@ public class TaxFragment extends Fragment {
 
         return rootview;
     }
+
+
 
     public void calculatorAddNumber(int newNumber){
         // if the current number is "--", if so then overwrite it
@@ -89,10 +94,10 @@ public class TaxFragment extends Fragment {
         } else {
             mCurrentNumber = Integer.parseInt(String.valueOf(mBeforeCalcText.getText()));
             if (mAddVatRb.isChecked()) {
-                result = mCurrentNumber / (1 + mTax / 100.0);
+                result = mCurrentNumber / (1 + mVat / 100.0);
                 vat = mCurrentNumber - result;
             } else {
-                result = mCurrentNumber * (1 + mTax / 100.0);
+                result = mCurrentNumber * (1 + mVat / 100.0);
                 vat = result - mCurrentNumber;
             }
             mAfterCalcText.setText(new DecimalFormat("#.###").format(result));
@@ -114,5 +119,12 @@ public class TaxFragment extends Fragment {
         outState.putString(BEFORE_NUMBER, String.valueOf(mBeforeCalcText.getText()));
         outState.putString(VAT_NUMBER, String.valueOf(mAfterCalcText.getText()));
         outState.putString(AFTER_NUMBER, String.valueOf(mVatText.getText()));
+    }
+
+    public void updateVat(int vat) {
+        mVat = vat;
+        if(mVatHeadlineText != null) {
+            mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
+        }
     }
 }
