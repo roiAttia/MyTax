@@ -62,8 +62,6 @@ public class TaxFragment extends Fragment {
         return rootview;
     }
 
-
-
     public void calculatorAddNumber(int newNumber){
         // if the current number is "--", if so then overwrite it
         // else add it
@@ -125,6 +123,7 @@ public class TaxFragment extends Fragment {
         mVat = vat;
         if(mVatHeadlineText != null) {
             mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
+            calculateSum();
         }
     }
 }
