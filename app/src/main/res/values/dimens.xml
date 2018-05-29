@@ -22,4 +22,5 @@
     <dimen name="list_item_job_horizontal_margin">8dp</dimen>
     <dimen name="list_item_job_vertical_margin">4dp</dimen>
     <dimen name="list_item_job_content_padding">16dp</dimen>
+    <dimen name="button_dot_text_size">14sp</dimen>
 </resources>
