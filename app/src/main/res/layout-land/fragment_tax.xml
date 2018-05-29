@@ -8,7 +8,7 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
             android:id="@+id/cv_radio_buttons"
@@ -170,7 +170,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:src="@drawable/ic_backspace_black_24dp" />
+                        android:src="@drawable/ic_backspace_black_24dp"
+                        android:contentDescription="@string/image_delete_content_description" />
 
                 </FrameLayout>
 
@@ -187,7 +188,7 @@
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="."
+                    android:text="@string/button_dot"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_column="2"

@@ -73,7 +73,7 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_sum_before_calculation"
                     android:textColor="@android:color/black" />
@@ -81,17 +81,17 @@
                 <View
                     android:id="@+id/divider"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="80dp"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_height="@dimen/information_divider_height"
+                    android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginTop="@dimen/information_divider_top_margin"
                     android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:id="@+id/tv_before_calc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_no_number"
                     android:textSize="@dimen/information_numbers_text_size" />
@@ -100,7 +100,7 @@
                     android:id="@+id/textView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_vat"
                     android:textColor="@android:color/black" />
@@ -108,17 +108,17 @@
                 <View
                     android:id="@+id/divider4"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="80dp"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_height="@dimen/information_divider_height"
+                    android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginTop="@dimen/information_divider_top_margin"
                     android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:id="@+id/tv_vat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_no_number"
                     android:textSize="@dimen/information_numbers_text_size" />
@@ -127,7 +127,7 @@
                     android:id="@+id/textView11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_sum_after_calculation"
                     android:textColor="@android:color/black" />
@@ -135,18 +135,18 @@
                 <View
                     android:id="@+id/divider2"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="80dp"
-                    android:layout_marginStart="80dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_height="@dimen/information_divider_height"
+                    android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginTop="@dimen/information_divider_top_margin"
                     android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:id="@+id/tv_after_calc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="@dimen/information_bottom_text_bottom_margin"
+                    android:layout_marginTop="@dimen/information_text_top_margin"
                     android:gravity="center"
                     android:text="@string/text_no_number"
                     android:textSize="@dimen/information_numbers_text_size" />

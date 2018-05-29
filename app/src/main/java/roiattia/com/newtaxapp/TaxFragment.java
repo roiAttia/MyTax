@@ -101,8 +101,7 @@ public class TaxFragment extends Fragment {
     }
 
     public void calculatorDelete(){
-        if (!(mBeforeCalcText.getText().equals(getString(R.string.text_no_number)) ||
-                (mBeforeCalcText.getText().equals("0")))) {
+        if (!mBeforeCalcText.getText().equals(getString(R.string.text_no_number))) {
             mCurrentNumber = mCurrentNumber / 10;
             mBeforeCalcText.setText(String.valueOf(mCurrentNumber));
             calculateSum();
