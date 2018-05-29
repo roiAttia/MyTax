@@ -19,26 +19,34 @@ import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAX_FRAGMENT = "tax_fragment";
+    private static final String JOBS_FRAGMENT = "jobs_fragment";
     private TaxFragment mTaxFragment;
+    private JobsFragment mJobsFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mTaxFragment = new TaxFragment();
+        if(savedInstanceState == null) {
+            mTaxFragment = new TaxFragment();
+            mJobsFragment = new JobsFragment();
+        } else {
+            mTaxFragment = (TaxFragment) getSupportFragmentManager().getFragment(savedInstanceState, TAX_FRAGMENT);
+            mJobsFragment = (JobsFragment) getSupportFragmentManager().getFragment(savedInstanceState, JOBS_FRAGMENT);
+        }
 
         setupViewPagerTabs();
     }
 
     private void setupViewPagerTabs() {
-        final JobsFragment jobsFragment = new JobsFragment();
 
         ViewPager viewPager = findViewById(R.id.viewpager);
         viewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return position == 0 ? mTaxFragment : jobsFragment;
+                return position == 0 ? mTaxFragment : mJobsFragment;
             }
 
             @Override
@@ -107,5 +115,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        getSupportFragmentManager().putFragment(outState, TAX_FRAGMENT, mTaxFragment);
+        getSupportFragmentManager().putFragment(outState, JOBS_FRAGMENT, mJobsFragment);
     }
 }

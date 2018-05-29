@@ -26,6 +26,9 @@
 
     <!-- Menu Items -->
     <string name="menu_item_vat_update">עדכן אחוז מעמ</string>
+    <string name="text_no_number">0</string>
+    <string name="image_delete_content_description">delete image</string>
+    <string name="max_number_message">מספר מקסימלי</string>
 
 
 </resources>
