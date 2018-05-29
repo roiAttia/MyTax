@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">NewTaxApp</string>
+
+    <!-- RadioButtons -->
+    <string name="radio_button_sum_with_vat">סכום כולל מעמ</string>
+    <string name="radio_button_sum_before_vat">סכום לפני מעמ</string>
+
+    <!-- Information Card -->
+    <string name="text_sum_before_calculation">סכום ללא מעמ</string>
+    <string name="text_sum_after_calculation">סכום כולל מעמ</string>
+    <string name="text_vat_precentege">לפי 17% אחוז מעמ</string>
+    <string name="text_vat">17 אחוז מעמ מהסכום</string>
+
+    <!-- Calculator Buttons -->
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_0">0</string>
+    <string name="button_dot">.</string>
+
+    <!-- Menu Items -->
+    <string name="menu_item_vat_update">עדכן אחוז מעמ</string>
+
+
+</resources>

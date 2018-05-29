@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="one_row">0</integer>
+    <integer name="one_column">0</integer>
+    <integer name="two_row">0</integer>
+    <integer name="two_column">1</integer>
+    <integer name="three_row">0</integer>
+    <integer name="three_column">2</integer>
+    <integer name="four_row">1</integer>
+    <integer name="four_column">0</integer>
+    <integer name="five_row">1</integer>
+    <integer name="five_column">1</integer>
+    <integer name="six_row">1</integer>
+    <integer name="six_column">2</integer>
+    <integer name="seven_row">2</integer>
+    <integer name="seven_column">0</integer>
+    <integer name="eight_row">2</integer>
+    <integer name="eight_column">1</integer>
+    <integer name="nine_row">2</integer>
+    <integer name="nine_column">2</integer>
+    <integer name="delete_row">3</integer>
+    <integer name="delete_column">0</integer>
+    <integer name="zero_row">3</integer>
+    <integer name="zero_column">1</integer>
+    <integer name="dot_row">3</integer>
+    <integer name="dot_column">2</integer>
+</resources>

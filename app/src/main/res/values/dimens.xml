@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cardview_horizontal_margin">16dp</dimen>
+    <dimen name="cardview_vertical_margin">8dp</dimen>
+    <dimen name="information_numbers_text_size">30sp</dimen>
+    <dimen name="list_item_job_horizontal_margin">8dp</dimen>
+    <dimen name="list_item_job_vertical_margin">4dp</dimen>
+    <dimen name="list_item_job_content_padding">16dp</dimen>
+</resources>
