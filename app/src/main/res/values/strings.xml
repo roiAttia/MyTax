@@ -24,7 +24,7 @@
     <string name="button_8">8</string>
     <string name="button_9">9</string>
     <string name="button_0">0</string>
-    <string name="button_dot">.</string>
+    <string name="dot">.</string>
     <string name="image_delete_content_description">delete image</string>
 
     <!-- Menu Items -->
@@ -32,7 +32,9 @@
 
     <!-- Dialog VAT Update -->
     <string name="dialog_vat_headline">VAT Update</string>
-    <string name="vat_update_message">VAT update to </string>
+    <string name="vat_update_message">VAT updated to </string>
     <string name="precentege_sign">%</string>
     <string name="dialog_vat_confirm_button">confirm</string>
+    <string name="delete_vat_input">delete vat input</string>
+    <string name="enter_vat_hint">Enter VAT</string>
 </resources>

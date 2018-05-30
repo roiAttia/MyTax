@@ -78,8 +78,13 @@
                     android:id="@+id/calc_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_1"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/one_column"
                     app:layout_row="@integer/one_row" />
 
@@ -87,8 +92,13 @@
                     android:id="@+id/calc_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_2"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/two_column"
                     app:layout_row="@integer/two_row" />
 
@@ -96,17 +106,28 @@
                     android:id="@+id/calc_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_3"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/three_column"
                     app:layout_row="@integer/three_row" />
+
 
                 <Button
                     android:id="@+id/calc_four"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_4"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/four_column"
                     app:layout_row="@integer/four_row" />
 
@@ -114,8 +135,13 @@
                     android:id="@+id/calc_five"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_5"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/five_column"
                     app:layout_row="@integer/five_row" />
 
@@ -123,8 +149,13 @@
                     android:id="@+id/calc_six"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_6"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/six_column"
                     app:layout_row="@integer/six_row" />
 
@@ -132,8 +163,13 @@
                     android:id="@+id/calc_seven"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_7"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/seven_column"
                     app:layout_row="@integer/seven_row" />
 
@@ -141,8 +177,13 @@
                     android:id="@+id/calc_eight"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_8"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/eight_column"
                     app:layout_row="@integer/eight_row" />
 
@@ -150,8 +191,13 @@
                     android:id="@+id/calc_nine"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_9"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/nine_column"
                     app:layout_row="@integer/nine_row" />
 
@@ -160,7 +206,11 @@
                     style="@style/Widget.AppCompat.Button"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
                     app:layout_column="@integer/delete_column"
                     app:layout_row="@integer/delete_row">
 
@@ -169,7 +219,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:contentDescription="@string/image_delete_content_description"
-                        android:src="@drawable/ic_backspace_black_24dp" />
+                        android:src="@drawable/selector_calculator_button_delete" />
 
                 </FrameLayout>
 
@@ -177,16 +227,26 @@
                     android:id="@+id/calc_zero"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_0"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/zero_column"
                     app:layout_row="@integer/zero_row" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/calc_dot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_dot"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
+                    android:onClick="calculatorClick"
+                    android:text="@string/dot"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
                     android:textStyle="bold"
                     app:layout_column="@integer/dot_column"
                     app:layout_row="@integer/dot_row" />

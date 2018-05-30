@@ -19,7 +19,6 @@ import butterknife.ButterKnife;
 
 public class TaxFragment extends Fragment {
 
-    private static final String TAG = TaxFragment.class.getSimpleName();
     private static final String BEFORE_NUMBER = "before_number";
     private static final String VAT_NUMBER = "vat_number";
     private static final String AFTER_NUMBER = "after_number";
@@ -32,7 +31,7 @@ public class TaxFragment extends Fragment {
     @BindView(R.id.rb_subtract_vat) RadioButton mSubtractVatRb;
 
     private int mVat;
-    private int mCurrentNumber;
+    private double mCurrentNumber;
 
     @Nullable
     @Override
@@ -71,10 +70,10 @@ public class TaxFragment extends Fragment {
             if(mBeforeCalcText.getText().length() + 1 == 10) {
                 Toast.makeText(getContext(), R.string.max_number_message, Toast.LENGTH_SHORT).show();
             } else {
-                mCurrentNumber = Integer.parseInt(String.valueOf(mBeforeCalcText.getText()));
+                mCurrentNumber = Double.parseDouble(String.valueOf(mBeforeCalcText.getText()));
                 // if the current number > 0 then append the new number to it
                 // else it's 0 and then overwrite it
-                if (mCurrentNumber > 0) {
+                if (mCurrentNumber != 0) {
                     mBeforeCalcText.append(String.valueOf(newNumber));
                 } else {
                     mBeforeCalcText.setText(String.valueOf(newNumber));
@@ -87,32 +86,34 @@ public class TaxFragment extends Fragment {
     private void calculateSum() {
         double vat;
         double result;
-        if(mBeforeCalcText.getText().length() + 1 == 10) {
-            Toast.makeText(getContext(), R.string.max_number_message, Toast.LENGTH_SHORT).show();
+        mCurrentNumber = Double.parseDouble(String.valueOf(mBeforeCalcText.getText()));
+        if (mAddVatRb.isChecked()) {
+            result = mCurrentNumber / (1 + mVat / 100.0);
+            vat = mCurrentNumber - result;
         } else {
-            mCurrentNumber = Integer.parseInt(String.valueOf(mBeforeCalcText.getText()));
-            if (mAddVatRb.isChecked()) {
-                result = mCurrentNumber / (1 + mVat / 100.0);
-                vat = mCurrentNumber - result;
-            } else {
-                result = mCurrentNumber * (1 + mVat / 100.0);
-                vat = result - mCurrentNumber;
-            }
-            mAfterCalcText.setText(new DecimalFormat("#.###").format(result));
-            mVatText.setText(new DecimalFormat("#.###").format(vat));
+            result = mCurrentNumber * (1 + mVat / 100.0);
+            vat = result - mCurrentNumber;
         }
+        mAfterCalcText.setText(new DecimalFormat("#.###").format(result));
+        mVatText.setText(new DecimalFormat("#.###").format(vat));
     }
 
     public void calculatorDelete(){
         if (!mBeforeCalcText.getText().equals(getString(R.string.text_no_number))) {
-            mCurrentNumber = mCurrentNumber / 10;
-            mBeforeCalcText.setText(String.valueOf(mCurrentNumber));
+            String numberInString = mBeforeCalcText.getText().toString();
+            if(numberInString.length() <= 1){
+                mBeforeCalcText.setText(getString(R.string.text_no_number));
+            } else {
+                mBeforeCalcText.setText(numberInString.substring(0, numberInString.length() - 1));
+            }
             calculateSum();
         }
     }
 
     public void calculatorDot() {
-        mBeforeCalcText.append(".");
+        if(!mBeforeCalcText.getText().toString().contains(".")) {
+            mBeforeCalcText.append(getString(R.string.dot));
+        }
     }
 
     @Override

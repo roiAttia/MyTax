@@ -347,7 +347,7 @@
                     android:layout_margin="@dimen/calculator_button_margin"
                     android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
-                    android:text="@string/button_dot"
+                    android:text="@string/dot"
                     android:textColor="@color/selector_calculaotr_button_text"
                     android:textSize="@dimen/calculator_button_text_size"
                     android:textStyle="bold"
