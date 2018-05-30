@@ -111,6 +111,10 @@ public class TaxFragment extends Fragment {
         }
     }
 
+    public void calculatorDot() {
+        mBeforeCalcText.append(".");
+    }
+
     @Override
     public void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);

@@ -144,6 +144,8 @@ public class MainActivity extends AppCompatActivity
     public void calculatorClick(View view){
         if(view.getId() == R.id.calc_delete){
             mTaxFragment.calculatorDelete();
+        } else if(view.getId() == R.id.calc_dot) {
+            mTaxFragment.calculatorDot();
         } else {
             Button button = (Button) view;
             int number = Integer.parseInt(String.valueOf(button.getText()));

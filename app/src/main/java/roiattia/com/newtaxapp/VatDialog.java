@@ -14,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class VatDialog extends DialogFragment {
 
@@ -37,6 +39,7 @@ public class VatDialog extends DialogFragment {
         View rootview = inflater.inflate(R.layout.dialog_vat_update, container, false);
 
         Button confirm = rootview.findViewById(R.id.btn_conifrm);
+        ImageView clearInput = rootview.findViewById(R.id.iv_clear_input);
         final EditText vatInput = rootview.findViewById(R.id.et_vat_input);
 
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
@@ -48,8 +51,22 @@ public class VatDialog extends DialogFragment {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mVatDialogListener.OnUpdateHandler(Integer.parseInt(String.valueOf(vatInput.getText())));
-                dismiss();
+                try{
+                    Integer.parseInt(vatInput.getText().toString());
+                    mVatDialogListener.OnUpdateHandler(Integer.parseInt(String.valueOf(vatInput.getText())));
+                    dismiss();
+                } catch (Exception e){
+                    Toast.makeText(getContext(), "Enter valid number", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+        clearInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vatInput.setText("");
+                vatInput.requestFocus();
             }
         });
 
