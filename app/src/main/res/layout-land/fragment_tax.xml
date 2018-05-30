@@ -187,7 +187,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_dot"
-                    android:textSize="@dimen/button_dot_text_size"
                     android:textStyle="bold"
                     app:layout_column="@integer/dot_column"
                     app:layout_row="@integer/dot_row" />

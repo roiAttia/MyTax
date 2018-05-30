@@ -32,7 +32,7 @@
 
     <!-- Dialog VAT Update -->
     <string name="dialog_vat_headline">VAT Update</string>
-    <string name="vat_update_message">VAT update to - </string>
+    <string name="vat_update_message">VAT update to </string>
     <string name="precentege_sign">%</string>
     <string name="dialog_vat_confirm_button">confirm</string>
 </resources>

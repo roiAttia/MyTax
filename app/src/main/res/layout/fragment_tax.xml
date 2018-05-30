@@ -71,8 +71,9 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="@dimen/information_text_top_margin"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:text="@string/text_sum_before_calculation"
                     android:textColor="@android:color/black" />
 
@@ -81,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/information_divider_height"
                     android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
-                    android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="@dimen/information_divider_top_margin"
                     android:background="?android:attr/listDivider" />
 
@@ -181,8 +182,13 @@
                     android:id="@+id/calc_one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
                     android:onClick="calculatorClick"
                     android:text="@string/button_1"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textStyle="bold"
                     app:layout_column="@integer/one_column"
                     app:layout_row="@integer/one_row" />
 
@@ -190,8 +196,13 @@
                     android:id="@+id/calc_two"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_2"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/two_column"
                     app:layout_row="@integer/two_row" />
 
@@ -199,10 +210,16 @@
                     android:id="@+id/calc_three"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:background="@drawable/selector_calculator_button"
                     android:onClick="calculatorClick"
                     android:text="@string/button_3"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:textStyle="bold"
                     app:layout_column="@integer/three_column"
                     app:layout_row="@integer/three_row" />
+
 
                 <Button
                     android:id="@+id/calc_four"
@@ -211,7 +228,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_4"
                     app:layout_column="@integer/four_column"
-                    app:layout_row="@integer/four_row" />
+                    app:layout_row="@integer/four_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <Button
                     android:id="@+id/calc_five"
@@ -220,7 +242,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_5"
                     app:layout_column="@integer/five_column"
-                    app:layout_row="@integer/five_row" />
+                    app:layout_row="@integer/five_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/calculator_button_margin"
+                    android:textSize="@dimen/calculator_button_text_size" />
 
                 <Button
                     android:id="@+id/calc_six"
@@ -229,7 +256,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_6"
                     app:layout_column="@integer/six_column"
-                    app:layout_row="@integer/six_row" />
+                    app:layout_row="@integer/six_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <Button
                     android:id="@+id/calc_seven"
@@ -238,7 +270,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_7"
                     app:layout_column="@integer/seven_column"
-                    app:layout_row="@integer/seven_row" />
+                    app:layout_row="@integer/seven_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <Button
                     android:id="@+id/calc_eight"
@@ -247,7 +284,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_8"
                     app:layout_column="@integer/eight_column"
-                    app:layout_row="@integer/eight_row" />
+                    app:layout_row="@integer/eight_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <Button
                     android:id="@+id/calc_nine"
@@ -256,7 +298,12 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_9"
                     app:layout_column="@integer/nine_column"
-                    app:layout_row="@integer/nine_row" />
+                    app:layout_row="@integer/nine_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <FrameLayout
                     android:id="@+id/calc_delete"
@@ -265,14 +312,18 @@
                     android:layout_height="match_parent"
                     android:onClick="calculatorClick"
                     app:layout_column="@integer/delete_column"
-                    app:layout_row="@integer/delete_row">
+                    app:layout_row="@integer/delete_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:layout_margin="@dimen/calculator_button_margin">
 
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:contentDescription="@string/image_delete_content_description"
-                        android:src="@drawable/ic_backspace_black_24dp" />
+                        android:src="@drawable/selector_calculator_button_delete" />
 
                 </FrameLayout>
 
@@ -283,17 +334,25 @@
                     android:onClick="calculatorClick"
                     android:text="@string/button_0"
                     app:layout_column="@integer/zero_column"
-                    app:layout_row="@integer/zero_row" />
+                    app:layout_row="@integer/zero_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/button_dot"
-                    android:textSize="@dimen/button_dot_text_size"
                     android:textStyle="bold"
                     app:layout_column="@integer/dot_column"
-                    app:layout_row="@integer/dot_row" />
+                    app:layout_row="@integer/dot_row"
+                    android:background="@drawable/selector_calculator_button"
+                    android:textColor="@color/selector_calculaotr_button_text"
+                    android:textSize="@dimen/calculator_button_text_size"
+                    android:layout_margin="@dimen/calculator_button_margin" />
 
 
             </android.support.v7.widget.GridLayout>
