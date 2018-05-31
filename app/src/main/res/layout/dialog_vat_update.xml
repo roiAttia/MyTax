@@ -49,6 +49,7 @@
                 android:id="@+id/iv_clear_input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center|end"
                 android:background="@android:color/transparent"
                 android:contentDescription="@string/delete_vat_input"
                 app:srcCompat="@drawable/ic_clear_image" />

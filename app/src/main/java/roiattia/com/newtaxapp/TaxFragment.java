@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -29,6 +31,8 @@ public class TaxFragment extends Fragment {
     @BindView(R.id.tv_vat_headline) TextView mVatHeadlineText;
     @BindView(R.id.rb_add_vat) RadioButton mAddVatRb;
     @BindView(R.id.rb_subtract_vat) RadioButton mSubtractVatRb;
+    @BindView(R.id.calc_delete) FrameLayout mDeleteButton;
+    @BindString(R.string.text_no_number) String mResetAmountsText;
 
     private int mVat;
     private double mCurrentNumber;
@@ -58,13 +62,24 @@ public class TaxFragment extends Fragment {
         mAddVatRb.setOnCheckedChangeListener(checkedChangeListener);
         mSubtractVatRb.setOnCheckedChangeListener(checkedChangeListener);
 
+        mDeleteButton.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mCurrentNumber = 0;
+                mBeforeCalcText.setText(mResetAmountsText);
+                mVatText.setText(mResetAmountsText);
+                mAfterCalcText.setText(mResetAmountsText);
+                return true;
+            }
+        });
+
         return rootview;
     }
 
     public void calculatorAddNumber(int newNumber){
         // if the current number is "--", if so then overwrite it
         // else add it
-        if (mBeforeCalcText.getText().equals(getString(R.string.text_no_number))) {
+        if (mBeforeCalcText.getText().equals(mResetAmountsText)) {
             mBeforeCalcText.setText(String.valueOf(newNumber));
         } else {
             if(mBeforeCalcText.getText().length() + 1 == 10) {
@@ -99,10 +114,10 @@ public class TaxFragment extends Fragment {
     }
 
     public void calculatorDelete(){
-        if (!mBeforeCalcText.getText().equals(getString(R.string.text_no_number))) {
+        if (!mBeforeCalcText.getText().equals(mResetAmountsText)) {
             String numberInString = mBeforeCalcText.getText().toString();
             if(numberInString.length() <= 1){
-                mBeforeCalcText.setText(getString(R.string.text_no_number));
+                mBeforeCalcText.setText(mResetAmountsText);
             } else {
                 mBeforeCalcText.setText(numberInString.substring(0, numberInString.length() - 1));
             }
