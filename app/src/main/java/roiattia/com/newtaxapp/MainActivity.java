@@ -3,21 +3,14 @@ package roiattia.com.newtaxapp;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
     implements VatDialog.VatDialogListener, SharedPreferences.OnSharedPreferenceChangeListener{
@@ -25,8 +18,6 @@ public class MainActivity extends AppCompatActivity
     private static final String TAX_FRAGMENT = "tax_fragment";
     private static final String VAT_DIALOG = "vat_dialog";
     private TaxFragment mTaxFragment;
-    private int mVat;
-
     private FrameLayout mLayout;
 
     @Override
@@ -52,19 +43,15 @@ public class MainActivity extends AppCompatActivity
 
     private void setupSharedPreferences() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        mVat = sharedPreferences.getInt(getString(R.string.shared_preferences_vat_key),
-                getResources().getInteger(R.integer.vat_default));
-        mTaxFragment.updateVat(mVat);
-        // Register the listener
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
+        mTaxFragment.updateVat(this);
     }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        if (key.equals(getString(R.string.shared_preferences_vat_key))) {
-            mVat = sharedPreferences.getInt(key, getResources().getInteger(R.integer.vat_default));
+        if (key.equals(PreferencesUtil.KEY_VAT_RATE)) {
+            mTaxFragment.updateVat(this);
         }
-        mTaxFragment.updateVat(mVat);
     }
 
     @Override
@@ -72,12 +59,7 @@ public class MainActivity extends AppCompatActivity
         Snackbar.make(mLayout,
                 String.format("%s %d%s", getString(R.string.vat_update_message),
                         newVat, getString(R.string.precentege_sign)) , Snackbar.LENGTH_SHORT).show();
-
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        SharedPreferences.Editor editor;
-        editor = sharedPreferences.edit();
-        editor.putInt(getString(R.string.shared_preferences_vat_key), newVat);
-        editor.apply();
+        PreferencesUtil.setVatRate(this, newVat);
     }
 
     @Override

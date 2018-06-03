@@ -1,5 +1,6 @@
 package roiattia.com.newtaxapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -139,8 +140,8 @@ public class TaxFragment extends Fragment {
         outState.putString(AFTER_NUMBER, String.valueOf(mVatText.getText()));
     }
 
-    public void updateVat(int vat) {
-        mVat = vat;
+    public void updateVat(Context context) {
+        mVat = PreferencesUtil.getVatRate(context);
         if(mVatHeadlineText != null) {
             mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
             calculateSum();
