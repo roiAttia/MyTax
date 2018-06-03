@@ -41,7 +41,7 @@
                         android:layout_gravity="start"
                         android:layout_weight="1"
                         android:checked="true"
-                        android:text="@string/radio_button_sum_with_vat" />
+                        android:text="@string/radio_button_add_vat" />
 
                     <RadioButton
                         android:id="@+id/rb_subtract_vat"
@@ -49,7 +49,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:layout_weight="1"
-                        android:text="@string/radio_button_sum_before_vat" />
+                        android:text="@string/radio_button_reduce_vat" />
+
                 </RadioGroup>
 
             </android.support.v7.widget.CardView>
@@ -284,7 +285,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/information_text_top_margin"
                         android:gravity="center"
-                        android:text="@string/text_sum_before_calculation"
+                        android:text="@string/text_sum_without_vat"
                         android:textColor="@android:color/black" />
 
                     <View
@@ -338,7 +339,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/information_text_top_margin"
                         android:gravity="center"
-                        android:text="@string/text_sum_after_calculation"
+                        android:text="@string/text_sum_with_vat"
                         android:textColor="@android:color/black" />
 
                     <View

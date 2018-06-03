@@ -3,13 +3,13 @@
     <string name="shared_preferences_vat_key">vat_share_preferences</string>
     מע\"מ
     <!-- RadioButtons -->
-    <string name="radio_button_sum_with_vat">סכום ללא מע\"מ</string>
-    <string name="radio_button_sum_before_vat">סכום כולל מע\"מ</string>
+    <string name="radio_button_add_vat">סכום ללא מע\"מ</string>
+    <string name="radio_button_reduce_vat">סכום כולל מע\"מ</string>
 
     <!-- Information Card -->
-    <string name="text_sum_before_calculation">סכום ללא מע\"מ</string>
-    <string name="text_sum_after_calculation">סכום כולל מע\"מ</string>
-    <string name="text_vat"> אחוז מע\"מ</string>
+    <string name="text_sum_without_vat">סכום ללא מע\"מ</string>
+    <string name="text_sum_with_vat">סכום כולל מע\"מ</string>
+    <string name="text_vat">אחוז מע\"מ</string>
     <string name="max_number_message">לא ניתן להוסיף עוד ספרות</string>
     <string name="text_no_number">--</string>
 
