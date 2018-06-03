@@ -3,14 +3,14 @@
     <string name="shared_preferences_vat_key">vat_share_preferences</string>
 
     <!-- RadioButtons -->
-    <string name="radio_button_sum_with_vat">Add VAT to amount</string>
-    <string name="radio_button_sum_before_vat">Reduce VAT from amount</string>
+    <string name="radio_button_sum_with_vat">Add VAT</string>
+    <string name="radio_button_sum_before_vat">Exclude VAT</string>
 
     <!-- Information Card -->
-    <string name="text_sum_before_calculation">Amount inserted</string>
-    <string name="text_sum_after_calculation">Amount after calculation</string>
-    <string name="text_vat">VAT from the amount</string>
-    <string name="text_no_number">0</string>
+    <string name="text_sum_before_calculation">Amount excluding VAT</string>
+    <string name="text_sum_after_calculation">Amount including VAT</string>
+    <string name="text_vat">% VAT</string>
+    <string name="text_no_number">--</string>
     <string name="max_number_message">Reached maximum digits</string>
 
     <!-- Calculator Buttons -->

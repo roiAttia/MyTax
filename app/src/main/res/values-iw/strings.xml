@@ -7,11 +7,11 @@
     <string name="radio_button_sum_before_vat">סכום כולל מע\"מ</string>
 
     <!-- Information Card -->
-    <string name="text_sum_before_calculation">סכום מקורי</string>
-    <string name="text_sum_after_calculation">סכום לאחר חישוב</string>
-    <string name="text_vat">אחוז מע\"מ מהסכום</string>
+    <string name="text_sum_before_calculation">סכום ללא מע\"מ</string>
+    <string name="text_sum_after_calculation">סכום כולל מע\"מ</string>
+    <string name="text_vat"> אחוז מע\"מ</string>
     <string name="max_number_message">לא ניתן להוסיף עוד ספרות</string>
-    <string name="text_no_number">0</string>
+    <string name="text_no_number">--</string>
 
     <!-- Calculator Buttons -->
     <string name="button_1">1</string>

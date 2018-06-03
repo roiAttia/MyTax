@@ -23,7 +23,7 @@ public class VatDialog extends DialogFragment {
     public VatDialog(){ }
 
     public interface VatDialogListener{
-        void OnUpdateHandler(int newVat);
+        void OnDialogVatUpdateHandler(int newVat);
     }
 
     @Override
@@ -41,9 +41,7 @@ public class VatDialog extends DialogFragment {
         ImageView clearInput = rootview.findViewById(R.id.iv_clear_input);
         final EditText vatInput = rootview.findViewById(R.id.et_vat_input);
 
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        int vat = sharedPreferences.getInt(getString(R.string.shared_preferences_vat_key),
-                getResources().getInteger(R.integer.vat_default));
+        int vat = PreferencesUtil.getVatRate(getContext());
 
         vatInput.setText(String.valueOf(vat));
 
@@ -52,7 +50,7 @@ public class VatDialog extends DialogFragment {
             public void onClick(View v) {
                 try{
                     Integer.parseInt(vatInput.getText().toString());
-                    mVatDialogListener.OnUpdateHandler(Integer.parseInt(String.valueOf(vatInput.getText())));
+                    mVatDialogListener.OnDialogVatUpdateHandler(Integer.parseInt(String.valueOf(vatInput.getText())));
                     dismiss();
                 } catch (Exception e){
                     Toast.makeText(getContext(), "Enter valid number", Toast.LENGTH_SHORT).show();

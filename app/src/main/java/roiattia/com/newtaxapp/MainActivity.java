@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity
 
     }
 
+    /**
+     * SharedPreferences setup and registration. Update vat rate
+     */
     private void setupSharedPreferences() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
@@ -55,9 +58,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void OnUpdateHandler(int newVat) {
-        Snackbar.make(mLayout,
-                String.format("%s %d%s", getString(R.string.vat_update_message),
+    public void OnDialogVatUpdateHandler(int newVat) {
+        Snackbar.make(mLayout, String.format("%s %d%s", getString(R.string.vat_update_message),
                         newVat, getString(R.string.precentege_sign)) , Snackbar.LENGTH_SHORT).show();
         PreferencesUtil.setVatRate(this, newVat);
     }
@@ -70,7 +72,12 @@ public class MainActivity extends AppCompatActivity
                 .unregisterOnSharedPreferenceChangeListener(this);
     }
 
+    /**
+     * Handle calculator's button's onClick method
+     */
     public void calculatorClick(View view){
+        // check for special cases: delete or dot button and trigger
+        // methods accordingly. numbers buttons are the default case
         switch (view.getId()) {
             case R.id.calc_delete:
                 mTaxFragment.calculatorDelete();
