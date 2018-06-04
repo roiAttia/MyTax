@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NewTaxApp</string>
+    <string name="app_name">VATCalculation</string>
     <string name="shared_preferences_vat_key">vat_share_preferences</string>
 
     <!-- RadioButtons -->
@@ -39,4 +39,10 @@
     <string name="enter_vat_hint">Enter new VAT</string>
     <string name="current_vat_text">Current VAT percentage is</string>
     <string name="invalid_vat_number_text">Enter valid number</string>
+
+    <!-- Dialog Version Update -->
+    <string name="dialog_version_update_message">Dear users,\n The app was updated to make your experience with it better. We changed It\'s looks and interaction, hopefully for the better.\n\n Thank you for using it!</string>
+    <string name="dialog_version_update_headline">Version Update</string>
+    <string name="dialog_version_update_button_close">got it</string>
+    <string name="dialog_version_update_button_to_store">write for us</string>
 </resources>

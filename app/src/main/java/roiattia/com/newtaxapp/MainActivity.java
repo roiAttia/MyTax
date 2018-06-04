@@ -1,11 +1,13 @@
 package roiattia.com.newtaxapp;
 
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,8 +17,10 @@ import android.widget.FrameLayout;
 public class MainActivity extends AppCompatActivity
     implements VatDialog.VatDialogListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private static final String TAX_FRAGMENT = "tax_fragment";
     private static final String VAT_DIALOG = "vat_dialog";
+    private static final String VERSION_DIALOG = "version_dialog";
     private TaxFragment mTaxFragment;
     private FrameLayout mLayout;
 
@@ -39,6 +43,22 @@ public class MainActivity extends AppCompatActivity
 
         setupSharedPreferences();
 
+        //TODO
+        if (isInstallFromUpdate() && PreferencesUtil.isFirstUpdate(this)){
+            VersionUpdateDialog versionUpdateDialog = new VersionUpdateDialog();
+            versionUpdateDialog.show(getSupportFragmentManager(), VERSION_DIALOG);
+        }
+    }
+
+    public boolean isInstallFromUpdate() {
+        try {
+            long firstInstallTime =   getPackageManager().getPackageInfo(getPackageName(), 0).firstInstallTime;
+            long lastUpdateTime = getPackageManager().getPackageInfo(getPackageName(), 0).lastUpdateTime;
+            return firstInstallTime != lastUpdateTime;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.i(TAG, e.getMessage());
+            return false;
+        }
     }
 
     /**
