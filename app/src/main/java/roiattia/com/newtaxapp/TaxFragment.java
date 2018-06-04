@@ -26,7 +26,7 @@ public class TaxFragment extends Fragment {
     private static final String VAT_NUMBER = "vat_number";
     private static final String AFTER_NUMBER = "after_number";
     private static final String ADD_VAT = "add_vat";
-    private static final String EXLUDE_VAT = "exlude_vat";
+    private static final String EXLUDE_VAT = "exclude_vat";
 
     @BindView(R.id.tv_before_calc) TextView mBeforeCalcText;
     @BindView(R.id.tv_after_calc) TextView mAfterCalcText;
@@ -210,9 +210,13 @@ public class TaxFragment extends Fragment {
      */
     public void updateVat(Context context) {
         mVat = PreferencesUtil.getVatRate(context);
+        // check if headline isn't null in case of app just started
         if(mVatHeadlineText != null) {
             mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
-            calculateSum();
+            // calculate only if there is an amount to calculate
+            if(!mResetAmountsText.equals(mBeforeCalcText.getText().toString())){
+                calculateSum();
+            }
         }
     }
 }

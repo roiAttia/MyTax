@@ -19,8 +19,8 @@
     <!-- Dialog Vat Update -->
     <dimen name="dialog_vat_headline_text_size">18sp</dimen>
     <dimen name="dialog_vat_headline_padding">8dp</dimen>
-    <dimen name="dialog_vat_input_top_margin">16dp</dimen>
-    <dimen name="dialog_vat_input_horizontal_margin">8dp</dimen>
+    <dimen name="dialog_vat_input_top_margin">8dp</dimen>
+    <dimen name="dialog_vat_input_horizontal_margin">16dp</dimen>
     <dimen name="dialog_vat_button_top_margin">16dp</dimen>
     <dimen name="dialog_vat_button_text_size">14sp</dimen>
 
@@ -34,6 +34,7 @@
     <dimen name="list_item_job_horizontal_margin">8dp</dimen>
     <dimen name="list_item_job_vertical_margin">4dp</dimen>
     <dimen name="list_item_job_content_padding">16dp</dimen>
+    <dimen name="dialog_input_text_size">14sp</dimen>
 
 
 </resources>

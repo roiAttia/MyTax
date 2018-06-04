@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class VatDialog extends DialogFragment {
@@ -37,33 +38,26 @@ public class VatDialog extends DialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.dialog_vat_update, container, false);
 
+        TextView currentVat = rootview.findViewById(R.id.tv_current_vat_rate);
         Button confirm = rootview.findViewById(R.id.btn_conifrm);
-        ImageView clearInput = rootview.findViewById(R.id.iv_clear_input);
         final EditText vatInput = rootview.findViewById(R.id.et_vat_input);
 
         int vat = PreferencesUtil.getVatRate(getContext());
 
-        vatInput.setText(String.valueOf(vat));
+        currentVat.setText(String.format("%s %d", getString(R.string.current_vat_text), vat));
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try{
-                    Integer.parseInt(vatInput.getText().toString());
-                    mVatDialogListener.OnDialogVatUpdateHandler(Integer.parseInt(String.valueOf(vatInput.getText())));
-                    dismiss();
-                } catch (Exception e){
-                    Toast.makeText(getContext(), "Enter valid number", Toast.LENGTH_SHORT).show();
+                // check to ensure input is not blank
+                if(vatInput.getText().toString().length() == 0){
+                    Toast.makeText(getContext(), R.string.invalid_vat_number_text, Toast.LENGTH_SHORT).show();
                 }
-
-            }
-        });
-
-        clearInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                vatInput.setText("");
-                vatInput.requestFocus();
+                else {
+                    int newVat = Integer.parseInt(vatInput.getText().toString());
+                    mVatDialogListener.OnDialogVatUpdateHandler(newVat);
+                    dismiss();
+                }
             }
         });
 

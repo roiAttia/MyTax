@@ -35,6 +35,8 @@
     <string name="vat_update_message">מס עודכן ל -</string>
     <string name="precentege_sign">%</string>
     <string name="dialog_vat_confirm_button">אישור</string>
-    <string name="enter_vat_hint">הכנסת מע\"מ</string>
+    <string name="enter_vat_hint">הכנסת אחוז מע\"מ חדש</string>
+    <string name="current_vat_text">אחוז מע\"מ נוכחי הוא</string>
+    <string name="invalid_vat_number_text">שכחת להכניס מספר למע\"מ</string>
 
 </resources>

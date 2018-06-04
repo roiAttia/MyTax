@@ -36,5 +36,7 @@
     <string name="precentege_sign">%</string>
     <string name="dialog_vat_confirm_button">confirm</string>
     <string name="delete_vat_input">delete vat input</string>
-    <string name="enter_vat_hint">Enter VAT</string>
+    <string name="enter_vat_hint">Enter new VAT</string>
+    <string name="current_vat_text">Current VAT percentage is</string>
+    <string name="invalid_vat_number_text">Enter valid number</string>
 </resources>
