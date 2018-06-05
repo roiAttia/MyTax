@@ -1,4 +1,4 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

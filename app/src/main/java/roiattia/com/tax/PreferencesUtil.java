@@ -1,10 +1,10 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-public class PreferencesUtil {
+class PreferencesUtil {
 
     public static final String KEY_VAT_RATE = "vat_rate";
     private static final int DEFAULT_VAT_RATE = 17;
@@ -44,8 +44,7 @@ public class PreferencesUtil {
      * @return true if it is the first time the app is running
      */
     public static boolean isFirstUpdate(Context context) {
-//        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-//        return prefs.getBoolean(KEY_VERSION_UPDATE, DEFAULT_VERSION_UPDATE);
-        return true;
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return prefs.getBoolean(KEY_VERSION_UPDATE, DEFAULT_VERSION_UPDATE);
     }
 }

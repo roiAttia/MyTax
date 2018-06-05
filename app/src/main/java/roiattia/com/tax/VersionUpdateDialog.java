@@ -1,4 +1,4 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class VersionUpdateDialog extends DialogFragment {
-
-    private static final String TAG = VersionUpdateDialog.class.getSimpleName();
 
     public VersionUpdateDialog(){ }
 
@@ -39,7 +36,6 @@ public class VersionUpdateDialog extends DialogFragment {
         toStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                http://play.google.com/store/apps/details?id=<package_name>
                 Intent i = new Intent(android.content.Intent.ACTION_VIEW);
                 i.setData(Uri.parse("http://play.google.com/store/apps/details?id=com.roi.tax"));
                 startActivity(i);
@@ -65,7 +61,6 @@ public class VersionUpdateDialog extends DialogFragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        Log.i(TAG, "onDestroy");
         PreferencesUtil.setFirstUpdate(getContext());
     }
 }

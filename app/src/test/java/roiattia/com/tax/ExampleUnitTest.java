@@ -1,4 +1,4 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import org.junit.Test;
 

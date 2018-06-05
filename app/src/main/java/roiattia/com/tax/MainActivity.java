@@ -1,4 +1,4 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -14,8 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity
-    implements VatDialog.VatDialogListener, SharedPreferences.OnSharedPreferenceChangeListener{
+    implements VatUpdateDialog.VatDialogListener, SharedPreferences.OnSharedPreferenceChangeListener{
 
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String TAX_FRAGMENT = "tax_fragment";
@@ -43,14 +45,13 @@ public class MainActivity extends AppCompatActivity
 
         setupSharedPreferences();
 
-        //TODO
         if (isInstallFromUpdate() && PreferencesUtil.isFirstUpdate(this)){
             VersionUpdateDialog versionUpdateDialog = new VersionUpdateDialog();
             versionUpdateDialog.show(getSupportFragmentManager(), VERSION_DIALOG);
         }
     }
 
-    public boolean isInstallFromUpdate() {
+    private boolean isInstallFromUpdate() {
         try {
             long firstInstallTime =   getPackageManager().getPackageInfo(getPackageName(), 0).firstInstallTime;
             long lastUpdateTime = getPackageManager().getPackageInfo(getPackageName(), 0).lastUpdateTime;
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void OnDialogVatUpdateHandler(int newVat) {
-        Snackbar.make(mLayout, String.format("%s %d%s", getString(R.string.vat_update_message),
+        Snackbar.make(mLayout, String.format(Locale.getDefault(), "%s %d%s", getString(R.string.vat_update_message),
                         newVat, getString(R.string.precentege_sign)) , Snackbar.LENGTH_SHORT).show();
         PreferencesUtil.setVatRate(this, newVat);
     }
@@ -124,7 +125,7 @@ public class MainActivity extends AppCompatActivity
         int itemId = item.getItemId();
         switch (itemId){
             case R.id.mi_vat_update:
-                VatDialog vatDialog = new VatDialog();
+                VatUpdateDialog vatDialog = new VatUpdateDialog();
                 vatDialog.show(getSupportFragmentManager(), VAT_DIALOG);
                 break;
         }

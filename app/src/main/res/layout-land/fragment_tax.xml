@@ -2,7 +2,6 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -67,7 +66,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/cv_radio_buttons">
 
                 <android.support.v7.widget.GridLayout
-                    android:id="@+id/gv_calculator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -80,7 +78,6 @@
                     app:rowCount="4">
 
                     <Button
-                        android:id="@+id/calc_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -94,7 +91,6 @@
                         app:layout_row="@integer/one_row" />
 
                     <Button
-                        android:id="@+id/calc_two"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -108,7 +104,6 @@
                         app:layout_row="@integer/two_row" />
 
                     <Button
-                        android:id="@+id/calc_three"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -123,7 +118,6 @@
 
 
                     <Button
-                        android:id="@+id/calc_four"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -137,7 +131,6 @@
                         app:layout_row="@integer/four_row" />
 
                     <Button
-                        android:id="@+id/calc_five"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -151,7 +144,6 @@
                         app:layout_row="@integer/five_row" />
 
                     <Button
-                        android:id="@+id/calc_six"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -165,7 +157,6 @@
                         app:layout_row="@integer/six_row" />
 
                     <Button
-                        android:id="@+id/calc_seven"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -179,7 +170,6 @@
                         app:layout_row="@integer/seven_row" />
 
                     <Button
-                        android:id="@+id/calc_eight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -193,7 +183,6 @@
                         app:layout_row="@integer/eight_row" />
 
                     <Button
-                        android:id="@+id/calc_nine"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -229,7 +218,6 @@
                     </FrameLayout>
 
                     <Button
-                        android:id="@+id/calc_zero"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
@@ -289,7 +277,6 @@
                         android:textColor="@android:color/black" />
 
                     <View
-                        android:id="@+id/divider"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/information_divider_height"
                         android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
@@ -316,7 +303,6 @@
                         android:textColor="@android:color/black" />
 
                     <View
-                        android:id="@+id/divider4"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/information_divider_height"
                         android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
@@ -343,7 +329,6 @@
                         android:textColor="@android:color/black" />
 
                     <View
-                        android:id="@+id/divider2"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/information_divider_height"
                         android:layout_marginEnd="@dimen/information_divider_horizontal_margin"

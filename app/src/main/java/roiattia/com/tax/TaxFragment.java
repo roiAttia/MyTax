@@ -1,4 +1,4 @@
-package roiattia.com.newtaxapp;
+package roiattia.com.tax;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 import butterknife.BindString;
 import butterknife.BindView;
@@ -48,7 +49,7 @@ public class TaxFragment extends Fragment {
         View rootview = inflater.inflate(R.layout.fragment_tax, container, false);
         ButterKnife.bind(this, rootview);
 
-        mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
+        mVatHeadlineText.setText(String.format(Locale.getDefault(), "%d %s", mVat, getString(R.string.text_vat)));
 
         // check savedInstanceState in case of screen rotation
         if (savedInstanceState != null){
@@ -212,7 +213,7 @@ public class TaxFragment extends Fragment {
         mVat = PreferencesUtil.getVatRate(context);
         // check if headline isn't null in case of app just started
         if(mVatHeadlineText != null) {
-            mVatHeadlineText.setText(String.format("%d %s", mVat, getString(R.string.text_vat)));
+            mVatHeadlineText.setText(String.format(Locale.getDefault(), "%d %s", mVat, getString(R.string.text_vat)));
             // calculate only if there is an amount to calculate
             if(!mResetAmountsText.equals(mBeforeCalcText.getText().toString())){
                 calculateSum();

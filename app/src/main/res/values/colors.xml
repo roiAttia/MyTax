@@ -9,8 +9,6 @@
     <color name="colorButtonsWhite">#ffffff</color>
 
     <!--white semi transparent color for the tablayout unselected tab-->
-    <color name="colorTabUnselected">#7FFFFFFF</color>
     <!--white color for the tablayout selected tab-->
-    <color name="colorTabSelected">#ffffff</color>
 
 </resources>

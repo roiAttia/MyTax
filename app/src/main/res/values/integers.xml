@@ -25,5 +25,4 @@
     <integer name="dot_row">3</integer>
     <integer name="dot_column">2</integer>
 
-    <integer name="vat_default">17</integer>
 </resources>
