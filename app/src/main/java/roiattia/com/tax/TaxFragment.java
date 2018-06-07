@@ -27,7 +27,7 @@ public class TaxFragment extends Fragment {
     private static final String VAT_NUMBER = "vat_number";
     private static final String AFTER_NUMBER = "after_number";
     private static final String ADD_VAT = "add_vat";
-    private static final String EXLUDE_VAT = "exclude_vat";
+    private static final String EXCLUDE_VAT = "exclude_vat";
 
     @BindView(R.id.tv_before_calc) TextView mBeforeCalcText;
     @BindView(R.id.tv_after_calc) TextView mAfterCalcText;
@@ -57,7 +57,7 @@ public class TaxFragment extends Fragment {
             mVatText.setText(savedInstanceState.getString(VAT_NUMBER));
             mAfterCalcText.setText(savedInstanceState.getString(AFTER_NUMBER));
             mAddVatRb.setChecked(savedInstanceState.getBoolean(ADD_VAT));
-            mSubtractVatRb.setChecked(savedInstanceState.getBoolean(EXLUDE_VAT));
+            mSubtractVatRb.setChecked(savedInstanceState.getBoolean(EXCLUDE_VAT));
         }
 
         headlinesUpdate();
@@ -115,23 +115,28 @@ public class TaxFragment extends Fragment {
      * @param newNumber the number to be added
      */
     public void calculatorAddNumber(int newNumber){
-        // if the current number is 0, if so then overwrite it with newNumber
+        String oldAmountString = clearCommas(mBeforeCalcText.getText().toString());
+        String newAmountString = "";
+        // if amount has reached max digits toast a message
         // else add newNumber
-        if (mResetAmountsText.equals(mBeforeCalcText.getText().toString())) {
-            mBeforeCalcText.setText(String.valueOf(newNumber));
-        }
-        else {
-            // if amount has reached max digits toast a message
+        if(oldAmountString.length() + 1 == 10) {
+            Toast.makeText(getContext(), R.string.max_number_message, Toast.LENGTH_SHORT).show();
+        } else {
+            // if the current number is 0, if so then overwrite it with newNumber
             // else add newNumber
-            if(mBeforeCalcText.getText().length() + 1 == 10) {
-                Toast.makeText(getContext(), R.string.max_number_message, Toast.LENGTH_SHORT).show();
+            if (oldAmountString.equals(mResetAmountsText)) {
+                newAmountString = String.valueOf(newNumber);
             }
-            // if newNumber and current amount are not 0 then add newNumber
-            else if(!(newNumber == 0 && mCurrentNumber == 0)) {
-                mBeforeCalcText.append(String.valueOf(newNumber));
+            else {
+                // if newNumber and current amount are not 0 then add newNumber
+                if(!(newNumber == 0 && mCurrentNumber == 0)) {
+                    newAmountString = (oldAmountString + newNumber);
+                }
             }
+            mBeforeCalcText.setText(new DecimalFormat("#,###,###.###").
+                    format(Double.parseDouble(newAmountString)));
+            calculateSum();
         }
-        calculateSum();
     }
 
     /**
@@ -140,7 +145,7 @@ public class TaxFragment extends Fragment {
     private void calculateSum() {
         double vat;
         double result;
-        mCurrentNumber = Double.parseDouble(String.valueOf(mBeforeCalcText.getText()));
+        mCurrentNumber = Double.parseDouble(clearCommas(mBeforeCalcText.getText().toString()));
         // do vat calculation according to which radio button is checked
         if (mSubtractVatRb.isChecked()) {
             result = mCurrentNumber / (1 + mVat / 100.0);
@@ -150,8 +155,8 @@ public class TaxFragment extends Fragment {
             result = mCurrentNumber * (1 + mVat / 100.0);
             vat = result - mCurrentNumber;
         }
-        mAfterCalcText.setText(new DecimalFormat("#.###").format(result));
-        mVatText.setText(new DecimalFormat("#.###").format(vat));
+        mAfterCalcText.setText(new DecimalFormat("#,###,###.###").format(result));
+        mVatText.setText(new DecimalFormat("#,###,###.###").format(vat));
     }
 
     /**
@@ -159,13 +164,15 @@ public class TaxFragment extends Fragment {
      * then calculate the new amount
      */
     public void calculatorDelete(){
+        String oldAmountString = clearCommas(mBeforeCalcText.getText().toString());
         // if current amount is not "--" or is larger then one digit
         // then delete last digit.
         // else reset.
-        if (!mResetAmountsText.equals(mBeforeCalcText.getText().toString())
-                && mBeforeCalcText.getText().length() > 1) {
-            String numberInString = mBeforeCalcText.getText().toString();
-            mBeforeCalcText.setText(numberInString.substring(0, numberInString.length() - 1));
+        if (!oldAmountString.equals(mResetAmountsText)
+                && oldAmountString.length() > 1) {
+            String newAmountString = oldAmountString.substring(0, oldAmountString.length() - 1);
+            mBeforeCalcText.setText(new DecimalFormat("#,###,###.###").
+                    format(Double.parseDouble(newAmountString)));
             calculateSum();
         }
         else {
@@ -203,7 +210,7 @@ public class TaxFragment extends Fragment {
         outState.putString(VAT_NUMBER, String.valueOf(mVatText.getText()));
         outState.putString(AFTER_NUMBER, String.valueOf(mAfterCalcText.getText()));
         outState.putBoolean(ADD_VAT, mAddVatRb.isChecked());
-        outState.putBoolean(EXLUDE_VAT, mSubtractVatRb.isChecked());
+        outState.putBoolean(EXCLUDE_VAT, mSubtractVatRb.isChecked());
     }
 
     /**
@@ -219,5 +226,9 @@ public class TaxFragment extends Fragment {
                 calculateSum();
             }
         }
+    }
+
+    private String clearCommas(String originalString){
+        return originalString.replace(",", "");
     }
 }

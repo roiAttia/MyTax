@@ -45,10 +45,10 @@ public class MainActivity extends AppCompatActivity
 
         setupSharedPreferences();
 
-        if (isInstallFromUpdate() && PreferencesUtil.isFirstUpdate(this)){
-            VersionUpdateDialog versionUpdateDialog = new VersionUpdateDialog();
-            versionUpdateDialog.show(getSupportFragmentManager(), VERSION_DIALOG);
-        }
+//        if (isInstallFromUpdate() && PreferencesUtil.isFirstUpdate(this)){
+//            VersionUpdateDialog versionUpdateDialog = new VersionUpdateDialog();
+//            versionUpdateDialog.show(getSupportFragmentManager(), VERSION_DIALOG);
+//        }
     }
 
     private boolean isInstallFromUpdate() {
