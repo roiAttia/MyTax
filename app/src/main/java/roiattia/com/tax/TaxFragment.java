@@ -126,15 +126,16 @@ public class TaxFragment extends Fragment {
             // else add newNumber
             if (oldAmountString.equals(mResetAmountsText)) {
                 newAmountString = String.valueOf(newNumber);
+                mBeforeCalcText.setText(newAmountString);
             }
             else {
                 // if newNumber and current amount are not 0 then add newNumber
                 if(!(newNumber == 0 && mCurrentNumber == 0)) {
                     newAmountString = (oldAmountString + newNumber);
+                    mBeforeCalcText.setText(new DecimalFormat("#,###,###.###").
+                            format(Double.parseDouble(newAmountString)));
                 }
             }
-            mBeforeCalcText.setText(new DecimalFormat("#,###,###.###").
-                    format(Double.parseDouble(newAmountString)));
             calculateSum();
         }
     }
