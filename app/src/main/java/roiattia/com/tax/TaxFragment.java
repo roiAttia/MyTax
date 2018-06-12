@@ -144,20 +144,25 @@ public class TaxFragment extends Fragment {
      * do calculations on the input amount
      */
     private void calculateSum() {
-        double vat;
-        double result;
-        mCurrentNumber = Double.parseDouble(clearCommas(mBeforeCalcText.getText().toString()));
-        // do vat calculation according to which radio button is checked
-        if (mSubtractVatRb.isChecked()) {
-            result = mCurrentNumber / (1 + mVat / 100.0);
-            vat = mCurrentNumber - result;
+        try {
+            double vat;
+            double result;
+            String beforeCalculation = clearCommas(mBeforeCalcText.getText().toString());
+            mCurrentNumber = Double.parseDouble(beforeCalculation);
+            // do vat calculation according to which radio button is checked
+            if (mSubtractVatRb.isChecked()) {
+                result = mCurrentNumber / (1 + mVat / 100.0);
+                vat = mCurrentNumber - result;
+            }
+            else {
+                result = mCurrentNumber * (1 + mVat / 100.0);
+                vat = result - mCurrentNumber;
+            }
+            mAfterCalcText.setText(new DecimalFormat("#,###,###.###").format(result));
+            mVatText.setText(new DecimalFormat("#,###,###.###").format(vat));
+        } catch (NumberFormatException e){
+            resetCalculations();
         }
-        else {
-            result = mCurrentNumber * (1 + mVat / 100.0);
-            vat = result - mCurrentNumber;
-        }
-        mAfterCalcText.setText(new DecimalFormat("#,###,###.###").format(result));
-        mVatText.setText(new DecimalFormat("#,###,###.###").format(vat));
     }
 
     /**
@@ -230,6 +235,6 @@ public class TaxFragment extends Fragment {
     }
 
     private String clearCommas(String originalString){
-        return originalString.replace(",", "");
+        return originalString.replaceAll("[,]", "");
     }
 }
