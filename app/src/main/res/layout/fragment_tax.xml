@@ -171,6 +171,7 @@
                     app:rowCount="4">
 
                     <Button
+                        android:id="@+id/calc_one"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"
