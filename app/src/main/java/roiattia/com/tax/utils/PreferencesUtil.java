@@ -1,10 +1,10 @@
-package roiattia.com.tax;
+package roiattia.com.tax.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-class PreferencesUtil {
+public class PreferencesUtil {
 
     public static final String KEY_VAT_RATE = "vat_rate";
     private static final int DEFAULT_VAT_RATE = 17;

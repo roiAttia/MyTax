@@ -1,4 +1,4 @@
-package roiattia.com.tax;
+package roiattia.com.tax.ui;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Locale;
+
+import roiattia.com.tax.utils.PreferencesUtil;
+import roiattia.com.tax.R;
 
 public class VatUpdateDialog extends DialogFragment {
 

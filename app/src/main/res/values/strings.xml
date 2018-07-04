@@ -10,9 +10,8 @@
     <string name="text_sum_with_vat">Amount including VAT</string>
     <string name="text_vat">percent VAT</string>
     <string name="text_no_number">--</string>
-    <string name="max_number_message">Reached maximum digits</string>
 
-    <!-- Calculator Buttons -->
+    <!-- CalculatorStatic Buttons -->
     <string name="button_1">1</string>
     <string name="button_2">2</string>
     <string name="button_3">3</string>
@@ -39,8 +38,4 @@
     <string name="invalid_vat_number_text">Enter valid number</string>
 
     <!-- Dialog Version Update -->
-    <string name="dialog_version_update_message">Dear users,\n The app was updated to make your experience with it better. We changed It\'s looks and interaction, hopefully for the better.\n\n Thank you for using it!</string>
-    <string name="dialog_version_update_headline">Version Update</string>
-    <string name="dialog_version_update_button_close">got it</string>
-    <string name="dialog_version_update_button_to_store">write for us</string>
 </resources>

@@ -35,7 +35,6 @@
             android:hint="@string/enter_vat_hint"
             android:inputType="number"
             android:textAlignment="textStart"
-            android:textColorHint="@android:color/black"
             android:textSize="@dimen/dialog_input_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

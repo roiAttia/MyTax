@@ -40,6 +40,7 @@
                         android:layout_gravity="start"
                         android:layout_weight="1"
                         android:checked="true"
+                        android:onClick="vatClick"
                         android:text="@string/radio_button_add_vat" />
 
                     <RadioButton
@@ -48,6 +49,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
                         android:layout_weight="1"
+                        android:onClick="vatClick"
                         android:text="@string/radio_button_reduce_vat" />
 
                 </RadioGroup>
@@ -196,7 +198,7 @@
                         app:layout_row="@integer/nine_row" />
 
                     <FrameLayout
-                        android:id="@+id/calc_delete"
+                        android:id="@+id/btn_calc_delete"
                         style="@style/Widget.AppCompat.Button"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -231,7 +233,7 @@
                         app:layout_row="@integer/zero_row" />
 
                     <Button
-                        android:id="@+id/calc_dot"
+                        android:id="@+id/btn_calc_dot"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/calculator_button_margin"

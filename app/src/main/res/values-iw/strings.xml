@@ -9,10 +9,9 @@
     <string name="text_sum_without_vat">סכום ללא מע\"מ</string>
     <string name="text_sum_with_vat">סכום כולל מע\"מ</string>
     <string name="text_vat">אחוז מע\"מ</string>
-    <string name="max_number_message">לא ניתן להוסיף עוד ספרות</string>
     <string name="text_no_number">--</string>
 
-    <!-- Calculator Buttons -->
+    <!-- CalculatorStatic Buttons -->
     <string name="button_1">1</string>
     <string name="button_2">2</string>
     <string name="button_3">3</string>
@@ -39,9 +38,5 @@
     <string name="invalid_vat_number_text">שכחת להכניס מספר למע\"מ</string>
 
     <!-- Dialog Version Update -->
-    <string name="dialog_version_update_message"> גבירותיי ורבותיי, \n האפליקציה עברה עדכון ושינוי מקיף.\n מקווים שתהנו מהאפליקציה המחודשת! \n\n אהבת? יש לך הצעות לשיפור? נשמח לשמוע על כך!</string>
-    <string name="dialog_version_update_headline">עדכון גרסא</string>
-    <string name="dialog_version_update_button_close">הבנתי</string>
-    <string name="dialog_version_update_button_to_store">החמא/קטול</string>
 
 </resources>
