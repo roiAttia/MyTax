@@ -155,5 +155,5 @@ public class TaxFragment extends Fragment {
         mBeforeCalcText.setText(Calculator.ZERO_STRING);
         mVatText.setText(Calculator.ZERO_STRING);
         mAfterCalcText.setText(Calculator.ZERO_STRING);
-    }
+    } 
 }
