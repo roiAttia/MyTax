@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">חישוב מע\"מ</string>
-    מע\"מ
+    <string name="app_name">מחשבון מע\"מ</string>
+
+    <string name="only_one_dot">רק נקודה עשרונית אחת מותרת</string>
+
     <!-- RadioButtons -->
     <string name="radio_button_add_vat">סכום ללא מע\"מ</string>
     <string name="radio_button_reduce_vat">סכום כולל מע\"מ</string>
@@ -29,14 +31,12 @@
     <string name="menu_item_vat_update">עדכון אחוז מע\"מ</string>
 
     <!-- Dialog VAT Update -->
-    <string name="dialog_vat_headline">עדכון אחוז מע\"מ</string>
-    <string name="vat_update_message">מס עודכן ל -</string>
-    <string name="precentege_sign">%</string>
-    <string name="dialog_vat_confirm_button">אישור</string>
-    <string name="enter_vat_hint">הכנסת אחוז מע\"מ חדש</string>
-    <string name="current_vat_text">אחוז מע\"מ נוכחי הוא</string>
-    <string name="invalid_vat_number_text">שכחת להכניס מספר למע\"מ</string>
-
-    <!-- Dialog Version Update -->
+    <string name="dialog_confirm">אישור</string>
+    <string name="dialog_cancel">ביטול</string>
+    <string name="update_vat_dialog_error_message">אחוז מע"מ חייב להיות מספר גדול מ-1</string>
+    <string name="update_vat_dialog_title">עדכון אחוז מע"מ</string>
+    <string name="update_vat_dialog_message">כרגע עומד על:</string>
+    <string name="update_vat_dialog_example_17">לדוגמא: 17</string>
+    <string name="update_vat_dialog_success">אחוז מע\"מ עודכן בהצלחה!</string>
 
 </resources>

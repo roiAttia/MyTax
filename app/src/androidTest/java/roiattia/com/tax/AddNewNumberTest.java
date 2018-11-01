@@ -7,6 +7,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import roiattia.com.tax.ui.CalculatorActivity;
+
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -16,8 +18,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class AddNewNumberTest {
 
-    @Rule public ActivityTestRule<MainActivity> mActivityTestRule =
-            new ActivityTestRule<>(MainActivity.class);
+    @Rule public ActivityTestRule<CalculatorActivity> mActivityTestRule =
+            new ActivityTestRule<>(CalculatorActivity.class);
 
     @Test
     public void clickNumberAddVat_DoCalculation(){
@@ -42,7 +44,7 @@ public class AddNewNumberTest {
         onView(withId(R.id.rb_add_vat)).perform(click());
         onView(withId(R.id.calc_one)).perform(click());
         onView(withId(R.id.calc_one)).perform(click());
-        onView(withId(R.id.calc_delete)).perform(click());
+        onView(withId(R.id.btn_calc_delete)).perform(click());
         onView(withId(R.id.tv_before_calc)).check(matches(withText("1")));
         onView(withId(R.id.tv_vat)).check(matches(withText("0.17")));
         onView(withId(R.id.tv_after_calc)).check(matches(withText("1.17")));
@@ -52,7 +54,7 @@ public class AddNewNumberTest {
     public void clickDot_DoCalculation(){
         onView(withId(R.id.rb_add_vat)).perform(click());
         onView(withId(R.id.calc_one)).perform(click());
-        onView(withId(R.id.calc_dot)).perform(click());
+        onView(withId(R.id.btn_calc_dot)).perform(click());
         onView(withId(R.id.calc_one)).perform(click());
         onView(withId(R.id.tv_before_calc)).check(matches(withText("1.1")));
         onView(withId(R.id.tv_vat)).check(matches(withText("0.187")));

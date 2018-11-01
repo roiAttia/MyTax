@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">VATCalculation</string>
+    <string name="app_name">VATCalculator</string>
+
+    <string name="only_one_dot">Only one dot is allowed in a number</string>
 
     <!-- RadioButtons -->
     <string name="radio_button_add_vat">Add VAT</string>
@@ -29,13 +31,13 @@
     <string name="menu_item_vat_update">Update VAT</string>
 
     <!-- Dialog VAT Update -->
-    <string name="dialog_vat_headline">VAT Update</string>
-    <string name="vat_update_message">VAT updated to </string>
-    <string name="precentege_sign">%</string>
-    <string name="dialog_vat_confirm_button">confirm</string>
-    <string name="enter_vat_hint">Enter new VAT</string>
-    <string name="current_vat_text">Current VAT percentage is</string>
-    <string name="invalid_vat_number_text">Enter valid number</string>
+    <string name="dialog_confirm">Confirm</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="update_vat_dialog_error_message">Vat must be a number greater then 1</string>
+    <string name="update_vat_dialog_title">Update VAT Rate</string>
+    <string name="update_vat_dialog_message">Currently at:</string>
+    <string name="update_vat_dialog_example_17">Example: 17</string>
+    <string name="update_vat_dialog_success">VAT updated!</string>
 
     <!-- Dialog Version Update -->
 </resources>
