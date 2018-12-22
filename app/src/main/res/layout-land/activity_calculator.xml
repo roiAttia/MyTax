@@ -276,14 +276,6 @@
                         android:text="@string/text_sum_without_vat"
                         android:textColor="@android:color/black" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/information_divider_height"
-                        android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginStart="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginTop="@dimen/information_divider_top_margin"
-                        android:background="?android:attr/listDivider" />
-
                     <TextView
                         android:id="@+id/tv_before_calc"
                         android:layout_width="match_parent"
@@ -292,6 +284,14 @@
                         android:gravity="center"
                         android:text="@string/text_no_number"
                         android:textSize="@dimen/information_numbers_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/information_divider_height"
+                        android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
+                        android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                        android:layout_marginTop="@dimen/information_divider_top_margin"
+                        android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/tv_vat_headline"
@@ -302,14 +302,6 @@
                         android:text="@string/text_vat"
                         android:textColor="@android:color/black" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/information_divider_height"
-                        android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginStart="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginTop="@dimen/information_divider_top_margin"
-                        android:background="?android:attr/listDivider" />
-
                     <TextView
                         android:id="@+id/tv_vat"
                         android:layout_width="match_parent"
@@ -319,6 +311,14 @@
                         android:text="@string/text_no_number"
                         android:textSize="@dimen/information_numbers_text_size" />
 
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/information_divider_height"
+                        android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
+                        android:layout_marginStart="@dimen/information_divider_horizontal_margin"
+                        android:layout_marginTop="@dimen/information_divider_top_margin"
+                        android:background="?android:attr/listDivider" />
+
                     <TextView
                         android:id="@+id/tv_calculated_amount_headline"
                         android:layout_width="match_parent"
@@ -327,14 +327,6 @@
                         android:gravity="center"
                         android:text="@string/text_sum_with_vat"
                         android:textColor="@android:color/black" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/information_divider_height"
-                        android:layout_marginEnd="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginStart="@dimen/information_divider_horizontal_margin"
-                        android:layout_marginTop="@dimen/information_divider_top_margin"
-                        android:background="?android:attr/listDivider" />
 
                     <TextView
                         android:id="@+id/tv_after_calc"
