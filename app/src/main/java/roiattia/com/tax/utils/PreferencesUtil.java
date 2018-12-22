@@ -11,6 +11,8 @@ import static roiattia.com.tax.utils.Constants.KEY_VERSION_UPDATE;
 
 public class PreferencesUtil {
 
+    private PreferencesUtil(){}
+
     /**
      * set the new vat rate to shared preferences
      * @param vat the new vat rate
