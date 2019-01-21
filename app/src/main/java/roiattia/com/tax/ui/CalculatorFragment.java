@@ -67,6 +67,11 @@ public class CalculatorFragment extends Fragment {
             }
         });
 
+        if(savedInstanceState != null){
+            updateAmountTexts();
+            updateHeadlines();
+        }
+
         updateVatHeadline();
 
         return rootView;

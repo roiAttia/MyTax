@@ -24,6 +24,7 @@ import roiattia.com.tax.utils.PreferencesUtil;
 
 import static roiattia.com.tax.utils.Constants.AMOUNT;
 import static roiattia.com.tax.utils.Constants.CALCULATED_AMOUNT;
+import static roiattia.com.tax.utils.Constants.CALCULATOR_FRAGMENT_TAG;
 import static roiattia.com.tax.utils.Constants.KEY_VAT_RATE;
 import static roiattia.com.tax.utils.Constants.VAT_AMOUNT;
 
@@ -47,11 +48,12 @@ public class CalculatorActivity extends AppCompatActivity
         setupSharedPreferences();
 
         if(savedInstanceState != null){
-//            getAmounts();
+            mCalculatorFragment =
+                    (CalculatorFragment) getSupportFragmentManager().findFragmentByTag(CALCULATOR_FRAGMENT_TAG);
         } else {
             mCalculatorFragment = new CalculatorFragment();
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.fl_fragment_placeholder, mCalculatorFragment)
+                    .add(R.id.fl_fragment_placeholder, mCalculatorFragment, CALCULATOR_FRAGMENT_TAG)
                     .commit();
         }
     }

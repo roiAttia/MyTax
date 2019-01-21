@@ -18,4 +18,6 @@ public class Constants {
     static final String KEY_VERSION_UPDATE = "version_update";
     static final boolean DEFAULT_VERSION_UPDATE = true;
 
+    public static final String CALCULATOR_FRAGMENT_TAG = "cft";
+
 }
