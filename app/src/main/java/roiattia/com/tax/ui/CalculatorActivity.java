@@ -34,16 +34,6 @@ public class CalculatorActivity extends AppCompatActivity
     private VATCalculator mVATCalculator;
     private EditTextDialog mUpdateVatRateDialog;
 
-    @BindView(R.id.rb_add_vat) RadioButton mAddVatRb;
-    @BindView(R.id.rb_subtract_vat) RadioButton mSubtractVatRb;
-    @BindView(R.id.tv_vat_headline) TextView mVatHeadlineText;
-    @BindView(R.id.tv_input_amount_headline) TextView mInputHeadlineText;
-    @BindView(R.id.tv_calculated_amount_headline) TextView mCalculatedHeadlineText;
-    @BindView(R.id.tv_before_calc) TextView mBeforeCalcText;
-    @BindView(R.id.tv_after_calc) TextView mAfterCalcText;
-    @BindView(R.id.tv_vat) TextView mVatText;
-    @BindView(R.id.btn_calc_delete) FrameLayout mDeleteButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,10 +44,15 @@ public class CalculatorActivity extends AppCompatActivity
 
         setupSharedPreferences();
 
-        setupUI();
+//        setupUI();
 
         if(savedInstanceState != null){
             getAmounts();
+        } else {
+            CalculatorFragment calculatorFragment = new CalculatorFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.fl_fragment_placeholder, calculatorFragment)
+                    .commit();
         }
     }
 
@@ -86,43 +81,43 @@ public class CalculatorActivity extends AppCompatActivity
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         sharedPreferences.registerOnSharedPreferenceChangeListener(this);
         mVATCalculator.setVatRate(PreferencesUtil.getVatRate(this));
-        mVatHeadlineText.setText(String.format(Locale.getDefault(),"%d %s",
-                PreferencesUtil.getVatRate(this),
-                getString(R.string.text_vat)));
+//        mVatHeadlineText.setText(String.format(Locale.getDefault(),"%d %s",
+//                PreferencesUtil.getVatRate(this),
+//                getString(R.string.text_vat)));
     }
 
     /**
      * Setup UI elements - radio buttons and delete button
      */
     private void setupUI() {
-        mAddVatRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    mVATCalculator.setIsAddVat(true);
-                }
-                updateHeadlines();
-                getAmounts();
-            }
-        });
-        mSubtractVatRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    mVATCalculator.setIsAddVat(false);
-                }
-                updateHeadlines();
-                getAmounts();
-            }
-        });
-        mDeleteButton.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                mVATCalculator.longDeleteButton();
-                getAmounts();
-                return true;
-            }
-        });
+//        mAddVatRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if(isChecked){
+//                    mVATCalculator.setIsAddVat(true);
+//                }
+//                updateHeadlines();
+//                getAmounts();
+//            }
+//        });
+//        mSubtractVatRb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if(isChecked){
+//                    mVATCalculator.setIsAddVat(false);
+//                }
+//                updateHeadlines();
+//                getAmounts();
+//            }
+//        });
+//        mDeleteButton.setOnLongClickListener(new View.OnLongClickListener() {
+//            @Override
+//            public boolean onLongClick(View v) {
+//                mVATCalculator.longDeleteButton();
+//                getAmounts();
+//                return true;
+//            }
+//        });
     }
 
     /**
@@ -138,9 +133,9 @@ public class CalculatorActivity extends AppCompatActivity
      * @param bundle bundle of amounts received from calculator
      */
     private void updateAmountTexts(Bundle bundle) {
-        mBeforeCalcText.setText(bundle.getString(AMOUNT));
-        mAfterCalcText.setText(bundle.getString(CALCULATED_AMOUNT));
-        mVatText.setText(bundle.getString(VAT_AMOUNT));
+//        mBeforeCalcText.setText(bundle.getString(AMOUNT));
+//        mAfterCalcText.setText(bundle.getString(CALCULATED_AMOUNT));
+//        mVatText.setText(bundle.getString(VAT_AMOUNT));
     }
 
     /**
@@ -148,12 +143,12 @@ public class CalculatorActivity extends AppCompatActivity
      */
     private void updateHeadlines() {
         if(mVATCalculator.getIsVat()){
-            mInputHeadlineText.setText(getString(R.string.text_sum_without_vat));
-            mCalculatedHeadlineText.setText(getString(R.string.text_sum_with_vat));
-        }
-        else {
-            mInputHeadlineText.setText(getString(R.string.text_sum_with_vat));
-            mCalculatedHeadlineText.setText(getString(R.string.text_sum_without_vat));
+//            mInputHeadlineText.setText(getString(R.string.text_sum_without_vat));
+//            mCalculatedHeadlineText.setText(getString(R.string.text_sum_with_vat));
+//        }
+//        else {
+//            mInputHeadlineText.setText(getString(R.string.text_sum_with_vat));
+//            mCalculatedHeadlineText.setText(getString(R.string.text_sum_without_vat));
         }
     }
 
@@ -193,9 +188,9 @@ public class CalculatorActivity extends AppCompatActivity
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals(KEY_VAT_RATE)) {
             mVATCalculator.setVatRate(PreferencesUtil.getVatRate(this));
-            mVatHeadlineText.setText(String.format(Locale.getDefault(),"%d %s",
-                    PreferencesUtil.getVatRate(this),
-                    getString(R.string.text_vat)));
+//            mVatHeadlineText.setText(String.format(Locale.getDefault(),"%d %s",
+//                    PreferencesUtil.getVatRate(this),
+//                    getString(R.string.text_vat)));
             getAmounts();
         }
     }
