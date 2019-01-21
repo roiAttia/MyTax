@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="CalculatorButton">
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">@dimen/calculator_button_margin</item>
+        <item name="android:background">@drawable/selector_calculator_button</item>
+        <item name="android:textColor">@color/selector_calculaotr_button_text</item>
+        <item name="android:textSize">@dimen/calculator_buttons_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:onClick">calculatorClick</item>
+    </style>
+
 </resources>
